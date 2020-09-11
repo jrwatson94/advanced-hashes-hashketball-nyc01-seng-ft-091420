@@ -131,16 +131,16 @@ end
 
 # Write code here
 
-def num_points_scored(name)
-  game_hash
- # binding.pry
-  game_hash.each do |key,value| 
-    game_hash[key][:players].each do |i|
-      if [:players][i][:player_name] == name
-        return [:players][i][:points]
-      end
+def num_points_scored name 
+  game_hash.each do |team_position, team_data|
+    team_data[:players].each do |player_name, player_data|
+    if player_name == name
+      return player_data[:points]
+    elsif player_name =! name
+    return nil
     end
-  end
+end
+end
 end
 
   
